@@ -1,0 +1,54 @@
+---
+title: "Exercício 1"
+format: html
+editor: visual
+---
+
+# EXERCÍCIO: Justiça do Trabalho
+
+```{r}
+library(dplyr)
+base <- read.csv("justica.csv")
+```
+
+1)  Filtrem a Justiça do Trabalho (justica == "Trabalho") em um objeto chamado `trab`. Quantos tribunais há?
+
+```{r}
+
+```
+
+2)  Para 2025, calculem o resumo (summary), a média e a mediana de tc. A média e a mediana são parecidas? O que isso indica?
+
+```{r}
+
+```
+
+3)  Quais são os 3 tribunais mais congestionados e os 3 menos congestionados em 2025?
+
+```{r}
+
+```
+
+4)  Façam um boxplot de tc por ano. O que mudou ao longo do tempo? Olhem com atenção o ano de 2020.
+
+```{r}
+
+```
+
+5)  Em 2025, quantos tribunais têm iad \< 1?
+
+```{r}
+
+```
+
+6)  Comparem os ramos Estadual, Federal e Trabalho em 2025: qual tem a maior mediana de tc?
+
+```{r}
+
+```
+
+7)  (Livre) Escolham o TRT da região de vocês e descrevam a evolução de tc de 2009 a 2025.
+
+```{r}
+
+```
