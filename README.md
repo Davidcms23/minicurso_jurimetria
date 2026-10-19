@@ -1,20 +1,18 @@
 # Minicurso Jurimetria
 Este repositório contém o material utilizado no minicurso "Introdução à Jurimetria com o software R", oferecido durante a Semana da Estatística da UFRN 2026.
 
-## Material de Apoio
-
-#### Livros
-
-- Epstein, L., & King, G. (2014). [*Pesquisa empírica em direito: as regras de inferência*](https://repositorio.fgv.br/items/a1fbf9fe-64d8-4e2f-8430-abcae5ec21e8).
-
-#### Manuais e Guias
-
-- *[Metodologia de Pesquisa Jurimétrica](https://livro.abj.org.br/)* — ABJ, 2022. Livro sobre metodologia de pesquisa jurimétrica escrito pela Associação Brasileira de Jurimetria (ABJ) para ser utilizado em cursos de Jurimetria para pessoas do Direito.
+## Material
 
 #### Ferramentas
 
 - [R Project](https://www.r-project.org/) — Ambiente de programação para análise estatística.
 - [RStudio](https://posit.co/download/rstudio-desktop/) — Ambiente de desenvolvimento para projetos de análise de dados em R.
+
+#### Livros
+
+- *[R para Ciência de Dados](https://pt.r4ds.hadley.nz/)*
+- *[Metodologia de Pesquisa Jurimétrica](https://livro.abj.org.br/)* - ABJ, 2022. Livro sobre metodologia de pesquisa jurimétrica escrito pela Associação Brasileira de Jurimetria (ABJ) para ser utilizado em cursos de Jurimetria para pessoas do Direito.
+- Epstein, L., & King, G. (2014). [*Pesquisa empírica em direito: as regras de inferência*](https://repositorio.fgv.br/items/a1fbf9fe-64d8-4e2f-8430-abcae5ec21e8).
 
 
 ## Referências
