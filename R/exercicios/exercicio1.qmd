@@ -8,7 +8,8 @@ editor: visual
 
 ```{r}
 library(dplyr)
-base <- read.csv("justica.csv")
+url <- "https://raw.githubusercontent.com/Davidcms23/minicurso_jurimetria/refs/heads/main/dados/justica.csv"
+base <- read.csv(url)
 ```
 
 1)  Filtrem a Justiça do Trabalho (justica == "Trabalho") em um objeto chamado `trab`. Quantos tribunais há?

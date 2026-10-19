@@ -1,6 +1,9 @@
 library(dplyr)
 
-base <- read.csv("Dados/justica.csv")
+url <- "https://raw.githubusercontent.com/Davidcms23/minicurso_jurimetria/refs/heads/main/dados/justica.csv"
+base <- read.csv(url)
+
+base <- read.csv("justica.csv")
 
 dim(base)           
 head(base)          
