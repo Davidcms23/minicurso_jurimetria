@@ -10,9 +10,9 @@ Este repositório contém o material utilizado no minicurso "Introdução à Jur
 
 #### Livros
 
-- *[R para Ciência de Dados](https://pt.r4ds.hadley.nz/)*
+- *[R para Ciência de Dados](https://pt.r4ds.hadley.nz/)* - Hadley Wickham, 2023.
 - *[Metodologia de Pesquisa Jurimétrica](https://livro.abj.org.br/)* - ABJ, 2022. Livro sobre metodologia de pesquisa jurimétrica escrito pela Associação Brasileira de Jurimetria (ABJ) para ser utilizado em cursos de Jurimetria para pessoas do Direito.
-- Epstein, L., & King, G. (2014). [*Pesquisa empírica em direito: as regras de inferência*](https://repositorio.fgv.br/items/a1fbf9fe-64d8-4e2f-8430-abcae5ec21e8).
+- [*Pesquisa empírica em direito: as regras de inferência*](https://repositorio.fgv.br/items/a1fbf9fe-64d8-4e2f-8430-abcae5ec21e8) - Epstein, L., & King, G. (2014). 
 
 
 ## Referências
