@@ -1,23 +1,23 @@
 # Minicurso Jurimetria
 Este repositório contém o material utilizado no minicurso "Introdução à Jurimetria com o software R", oferecido durante a Semana da Estatística da UFRN 2026.
 
-# Material de Apoio
+## Material de Apoio
 
-## Livros
+#### Livros
 
-- Epstein, L., & King, G. (2014). [*Pesquisa empírica em direito: as regras de inferência*](https://hdl.handle.net/10438/11444).
+- Epstein, L., & King, G. (2014). [*Pesquisa empírica em direito: as regras de inferência*](https://repositorio.fgv.br/items/a1fbf9fe-64d8-4e2f-8430-abcae5ec21e8).
 
-## Manuais e Guias
+#### Manuais e Guias
 
-- *[Metodologia de Pesquisa Jurimétrica]([URL](https://livro.abj.org.br/))* — ABJ, 2022. Livro sobre metodologia de pesquisa jurimétrica escrito pela Associação Brasileira de Jurimetria (ABJ) para ser utilizado em cursos de Jurimetria para pessoas do Direito.
+- *[Metodologia de Pesquisa Jurimétrica](https://livro.abj.org.br/)* — ABJ, 2022. Livro sobre metodologia de pesquisa jurimétrica escrito pela Associação Brasileira de Jurimetria (ABJ) para ser utilizado em cursos de Jurimetria para pessoas do Direito.
 
-## Ferramentas e Recursos
+#### Ferramentas
 
 - [R Project](https://www.r-project.org/) — Ambiente de programação para análise estatística.
 - [RStudio](https://posit.co/download/rstudio-desktop/) — Ambiente de desenvolvimento para projetos de análise de dados em R.
 
 
-# Referências
+## Referências
 
 - [Tempo dos Processos Relacionados à Adoção no Brasil: Uma Análise Sobre os Impactos da Atuação do Poder Judiciário](https://www.conjur.com.br/wp-content/uploads/2023/09/estudo-adocao.pdf). Nunes, M. G. et al. (2014). Associação Brasileira de Jurimetria (ABJ). Relatório final de pesquisa.
 
