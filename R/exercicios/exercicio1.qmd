@@ -7,7 +7,7 @@ editor: visual
 #### Taxa de congestionamento (tc)
 
 $$
-TC = \frac{P}{P+P}
+TC = \frac{P}{P+B}
 $$
 
 $P =$ número de processos pendentes ao final do período;\
