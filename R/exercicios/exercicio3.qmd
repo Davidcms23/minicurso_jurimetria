@@ -1,0 +1,72 @@
+---
+title: "Exercício 3"
+format: html
+editor: visual
+---
+
+```{r}
+library(dplyr)
+library(ggplot2)
+
+url <- "https://raw.githubusercontent.com/Davidcms23/minicurso_jurimetria/refs/heads/main/dados/eleicao.csv"
+base <- read.csv(url)
+```
+
+1) Filtrem a Justiça Estadual (`justica == "Estadual"`) em um objeto
+   chamado `est`. Usando `mutate()`, criem a coluna `prop_estag`, que
+   mede a porcentagem de estudantes estagiários na força de trabalho:
+     prop_estag = (tfauxe / (serv + tfauxe)) * 100
+
+```{r}
+
+```
+
+2) Agrupem `est` por `ano` e calculem a soma total de estagiários
+   (`total_estag = sum(tfauxe, na.rm = TRUE)`) e o gasto total com
+   estagiários em milhões de reais (`gasto_mi = sum(dest, na.rm = TRUE) / 1e6`).
+   Façam um gráfico de barras colorido no ggplot2 mostrando a evolução
+   de `gasto_mi` por ano.
+
+```{r}
+
+```
+
+3) Filtrem o ano de 2025 em `est25`. Calculem a média e a mediana de
+   `prop_estag`. Em média, qual é o peso dos estagiários nos TJs?
+
+```{r}
+
+```
+
+4) Em 2025, quais são os 3 TJs com maior porcentagem de estagiários
+   (`prop_estag`) e os 3 com menor porcentagem?
+
+```{r}
+
+```
+
+5) Usando o `ggplot2`, façam um boxplot colorido de `prop_estag` por
+   `porte` do tribunal em 2025 (`aes(x = porte, y = prop_estag, fill = porte)`).
+   Tribunais de grande porte dependem mais de estagiários?
+
+```{r}
+
+```
+
+6) Usando a `base` completa no ano de 2025, comparem os 4 ramos da
+   Justiça (Eleitoral, Estadual, Federal e Trabalho): qual ramo tem a
+   maior mediana de gasto com capacitação por servidor (`dcap / serv`)?
+
+```{r}
+
+```
+
+7) (Livre) Façam um gráfico de dispersão no ggplot2 com os dados de
+   2025 (`est25`) cruzando o número de servidores (`serv` no eixo x) e
+   o número de estagiários (`tfauxe` no eixo y), colorindo por `porte`.
+   
+```{r}
+
+```
+   
+   
