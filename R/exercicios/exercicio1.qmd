@@ -4,7 +4,7 @@ format: html
 editor: visual
 ---
 
-Taxa de congestionamento (tc):
+#### Taxa de congestionamento (tc)
 
 $$
 TC = \frac{P}{P+P}
@@ -13,7 +13,7 @@ $$
 $P =$ número de processos pendentes ao final do período;\
 $B =$ número de processos baixados nos últimos 12 meses.
 
-Índice de Atendimento á Demanda (iad)
+#### Índice de Atendimento à Demanda (iad)
 
 $$
 IAD = \frac{B}{C}
