@@ -1,0 +1,146 @@
+---
+title: "Exemplo 3"
+format:
+  html: default
+  pdf: default
+editor: visual
+---
+
+# Dados
+
+| Variável  | Descrição                                                   |
+|-----------|-------------------------------------------------------------|
+| `ano`     | ano de referência (2009 a 2025)                             |
+| `justica` | ramo da Justiça (Estadual, Federal, Trabalho, ...)          |
+| `sigla`   | tribunal (TJAC, TRT21, ...)                                 |
+| `cn`      | casos novos no ano                                          |
+| `cp`      | casos pendentes (ainda sem solução)                         |
+| `tbaix`   | processos baixados (encerrados)                             |
+| `iad`     | Índice de Atendimento à Demanda = tbaix / cn                |
+| `tc`      | taxa de congestionamento (simplificada) = cp / (cp + tbaix) |
+
+```{r echo=F}
+library(dplyr)
+url <- "https://raw.githubusercontent.com/Davidcms23/minicurso_jurimetria/refs/heads/main/dados/justica.csv"
+base <- read.csv(url)
+```
+
+# Análise
+
+## Conhecendo os dados
+
+```{r}
+head(base)
+```
+
+#### Taxa de congestionamento (tc)
+
+$$
+TC = \frac{P}{P+B}
+$$
+
+$P =$ número de processos pendentes ao final do período;\
+$B =$ número de processos baixados no período.
+
+$< 1$: o estoque de processos cresceu;\
+$> 1$: o tribunal resolveu mais do que recebeu.\
+perto de $1$: muito processo acumulado;\
+perto de $0$: pouco.
+
+#### Índice de Atendimento à Demanda (iad)
+
+$$
+IAD = \frac{B}{C}
+$$
+
+$B =$ número de processos baixados no período;\
+$C =$ número de casos novos recebidos no mesmo período.
+
+## Filtrando
+
+### Por `justiça`
+
+```{r}
+estadual <- base |>
+  filter(justica == "Estadual")
+dim(estadual)
+n_distinct(estadual$sigla)
+```
+
+### Por `ano`
+
+```{r}
+est25 <- estadual |>
+  filter(ano == 2025)
+```
+
+```{r}
+summary(est25$tc)             # resumo da taxa de congestionamento
+mean(est25$tc)                # média
+median(est25$tc)              # mediana
+```
+
+## Contestionamento do tribunais
+
+```{r}
+est25 |>
+  arrange(desc(tc)) |>
+  select(sigla, cn, cp, tbaix, tc) |>
+  head(5)
+```
+
+```{r}
+est25 |>
+  arrange(tc) |>
+  select(sigla, cn, cp, tbaix, tc) |>
+  head(5)
+```
+
+## Histograma
+
+```{r}
+hist(est25$tc,
+     main = "Taxa de congestionamento - Justiça Estadual, 2025",
+     xlab = "Taxa de congestionamento", ylab = "Número de tribunais")
+```
+
+## Boxplot
+
+```{r}
+boxplot(tc ~ ano, data = estadual, las = 2,
+        main = "Taxa de congestionamento - Justiça Estadual",
+        xlab = "Ano", ylab = "Taxa de congestionamento")
+```
+
+## Mediana Série
+
+```{r}
+por_ano <- estadual |>
+  group_by(ano) |>
+  summarise(mediana = median(tc, na.rm = TRUE),
+            media = mean(tc,   na.rm = TRUE),
+            n = n())
+
+plot(por_ano$ano, por_ano$mediana, type = "b",
+     main = "Mediana da taxa de congestionamento - Justiça Estadual",
+     xlab = "Ano", ylab = "Mediana de tc")
+```
+
+## IAD \< 1
+
+```{r}
+estadual |>
+  group_by(ano) |>
+  summarise(abaixo_de_1 = sum(iad < 1, na.rm = TRUE),
+            total = n())
+```
+
+## IAD
+
+```{r}
+mean(estadual$iad,   na.rm = TRUE)
+median(estadual$iad, na.rm = TRUE)
+hist(estadual$iad,
+     main = "IAD - Justiça Estadual",
+     xlab = "IAD", col = "grey80")
+```

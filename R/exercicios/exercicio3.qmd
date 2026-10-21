@@ -76,6 +76,8 @@ base <- read.csv(url)
 
 7)  Usando a `base` completa, de 2015 a 2025 (período em que `dcap` existe), calculem, para cada ano e cada ramo da Justiça, a mediana do gasto com capacitação por servidor (`dcap / serv`). Façam um gráfico de LINHAS no ggplot2, com uma linha por ramo (`color = justica`).
 
+<!-- -->
+
 a)  Qual ramo investe mais em capacitação por servidor ao longo da série?\
 
 ```{r a}

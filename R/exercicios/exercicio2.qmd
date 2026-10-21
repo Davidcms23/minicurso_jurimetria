@@ -11,7 +11,7 @@ O conjunto de dados reúne informações dos tribunais estaduais brasileiros sob
 ## Descrição
 
 | Variável    | Descrição                                                    |
-|--------------------|----------------------------------------------------|
+|-------------|--------------------------------------------------------------|
 | `ano`       | ano de referência (2016 a 2025)                              |
 | `sigla`     | tribunal estadual (TJAC, TJRN, TJSP, ...)                    |
 | `uf_sede`   | unidade da federação (AC, RN, SP, ...)                       |
@@ -28,12 +28,12 @@ O conjunto de dados reúne informações dos tribunais estaduais brasileiros sob
 ```{r}
 library(dplyr)
 url <- "https://raw.githubusercontent.com/Davidcms23/minicurso_jurimetria/refs/heads/main/dados/violencia.csv"
-vf <- read.csv(url)
+vd <- read.csv(url)
 ```
 
 # Exercício
 
-1)  Agrupem a base `vf` por `ano` e calculem a soma total de casos novos de feminicídio (`cncfem`) no Brasil de 2016 a 2025. O número cresceu?
+1)  Agrupem a base `vd` por `ano` e calculem a soma total de casos novos de feminicídio (`cncfem`) no Brasil de 2016 a 2025. O número cresceu?
 
 ```{r}
 
@@ -45,9 +45,9 @@ vf <- read.csv(url)
 
 ```
 
-3)  Usando `mutate()`, criem na base `vf` duas novas colunas:
+3)  Usando `mutate()`, criem na base `vd` duas novas colunas:
     - `taxa_fem = cncfem / h2m` (casos novos por 100 mil mulheres)
-    - `iad_fem` (índice de atendimento à demanda) Depois, filtrem novamente o ano de 2025 no objeto `vf25`.
+    - `iad_fem` (índice de atendimento à demanda) Depois, filtrem novamente o ano de 2025 no objeto `vd25`.
 
 ```{r}
 
@@ -71,7 +71,7 @@ vf <- read.csv(url)
 
 ```
 
-7)  Filtrem o TJ do Rio Grande do Norte e observem a evolução de `cncvf`, `cncfem`, `taxa_vf = cncvf/h2m` e `taxa_fem` de 2016 a 2025.
+7)  Filtrem o TJ do Rio Grande do Norte e observem a evolução de `cncvd`, `cncfem`, `taxa_vd = cncvd/h2m` e `taxa_fem` de 2016 a 2025.
 
 ```{r}
 
