@@ -21,29 +21,6 @@ O conjunto de dados reúne informações sobre a movimentação processual dos t
 | `iad`     | Índice de Atendimento à Demanda = tbaix / cn                |
 | `tc`      | taxa de congestionamento (simplificada) = cp / (cp + tbaix) |
 
-#### Taxa de congestionamento (tc)
-
-$$
-TC = \frac{P}{P+B}
-$$
-
-$P =$ número de processos pendentes ao final do período;\
-$B =$ número de processos baixados nos últimos 12 meses.
-
-$< 1$: o estoque de processos cresceu;\
-$> 1$: o tribunal resolveu mais do que recebeu.\
-perto de $1$: muito processo acumulado;\
-perto de $0$: pouco.
-
-#### Índice de Atendimento à Demanda (iad)
-
-$$
-IAD = \frac{B}{C}
-$$
-
-$B =$ número de processos baixados no período;\
-$C =$ número de casos novos recebidos no mesmo período.
-
 # Exercício
 
 ```{r}
