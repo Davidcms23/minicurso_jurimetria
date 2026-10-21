@@ -4,6 +4,23 @@ format: html
 editor: visual
 ---
 
+# Sobre os dados
+
+O conjunto de dados reúne informações sobre a movimentação processual dos tribunais brasileiros entre 2009 e 2025. O exercício busca analisar o congestionamento judicial, a capacidade dos tribunais de atender à demanda e as diferenças entre ramos da Justiça, além de investigar a evolução desses indicadores ao longo do tempo.
+
+## Descrição
+
+| Variável  | Descrição                                                   |
+|-----------|-------------------------------------------------------------|
+| `ano`     | ano de referência (2009 a 2025)                             |
+| `justica` | ramo da Justiça (Estadual, Federal, Trabalho, ...)          |
+| `sigla`   | tribunal (TJAC, TRT21, ...)                                 |
+| `cn`      | casos novos no ano                                          |
+| `cp`      | casos pendentes (ainda sem solução)                         |
+| `tbaix`   | processos baixados (encerrados)                             |
+| `iad`     | Índice de Atendimento à Demanda = tbaix / cn                |
+| `tc`      | taxa de congestionamento (simplificada) = cp / (cp + tbaix) |
+
 #### Taxa de congestionamento (tc)
 
 $$
@@ -26,17 +43,6 @@ $$
 
 $B =$ número de processos baixados no período;\
 $C =$ número de casos novos recebidos no mesmo período.
-
-| Variável  | Descrição                                                   |
-|-----------|-------------------------------------------------------------|
-| `ano`     | ano de referência (2009 a 2025)                             |
-| `justica` | ramo da Justiça (Estadual, Federal, Trabalho, ...)          |
-| `sigla`   | tribunal (TJAC, TRT21, ...)                                 |
-| `cn`      | casos novos no ano                                          |
-| `cp`      | casos pendentes (ainda sem solução)                         |
-| `tbaix`   | processos baixados (encerrados)                             |
-| `iad`     | Índice de Atendimento à Demanda = tbaix / cn                |
-| `tc`      | taxa de congestionamento (simplificada) = cp / (cp + tbaix) |
 
 # Exercício
 

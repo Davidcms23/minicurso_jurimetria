@@ -4,6 +4,30 @@ format: html
 editor: visual
 ---
 
+# Sobre os dados
+
+O conjunto de dados reúne informações sobre os tribunais brasileiros, incluindo força de trabalho, despesas, estrutura e movimentação processual, ao longo dos anos. Neste exercício, o foco está na análise da presença de estagiários nos tribunais, dos gastos associados e das diferenças entre os ramos e portes da Justiça.
+
+## Descrição
+
+| Variável  | Descrição                                                      |
+|------------------------------------|------------------------------------|
+| `ano`     | ano de referência (2011 a 2025)                                |
+| `justica` | ramo da Justiça (Eleitoral, Estadual, Federal, Trabalho)       |
+| `sigla`   | tribunal (TRE-RN, TJRN, TRT21, ...)                            |
+| `uf_sede` | unidade da federação                                           |
+| `porte`   | porte do tribunal (Pequeno, Médio, Grande)                     |
+| `cn`      | casos novos no ano                                             |
+| `cp`      | casos pendentes                                                |
+| `tbaix`   | processos baixados                                             |
+| `el`      | número de eleitores no estado (Justiça Eleitoral)              |
+| `urnas`   | número de urnas eletrônicas (Justiça Eleitoral)                |
+| `serv`    | total de servidores do tribunal                                |
+| `tfauxe`  | total de estudantes estagiários no tribunal                    |
+| `dest`    | despesa total anual com estagiários (em R\$)                   |
+| `dcap`    | despesa anual com capacitação e formação (em R\$, 2015 a 2025) |
+| `tpesc`   | total de pessoal nas Escolas Judiciais (2015 a 2025)           |
+
 ```{r}
 library(dplyr)
 library(ggplot2)
@@ -12,61 +36,54 @@ url <- "https://raw.githubusercontent.com/Davidcms23/minicurso_jurimetria/refs/h
 base <- read.csv(url)
 ```
 
-1) Filtrem a Justiça Estadual (`justica == "Estadual"`) em um objeto
-   chamado `est`. Usando `mutate()`, criem a coluna `prop_estag`, que
-   mede a porcentagem de estudantes estagiários na força de trabalho:
-     prop_estag = (tfauxe / (serv + tfauxe)) * 100
+# Exercício
+
+1)  Filtrem a Justiça Estadual (`justica == "Estadual"`) em um objeto chamado `est`. Usando `mutate()`, criem a coluna `prop_estag`, que mede a porcentagem de estudantes estagiários na força de trabalho: prop_estag = (tfauxe / (serv + tfauxe)) \* 100
 
 ```{r}
 
 ```
 
-2) Agrupem `est` por `ano` e calculem a soma total de estagiários
-   (`total_estag = sum(tfauxe, na.rm = TRUE)`) e o gasto total com
-   estagiários em milhões de reais (`gasto_mi = sum(dest, na.rm = TRUE) / 1e6`).
-   Façam um gráfico de barras colorido no ggplot2 mostrando a evolução
-   de `gasto_mi` por ano.
+2)  Agrupem `est` por `ano` e calculem a soma total de estagiários (`total_estag = sum(tfauxe, na.rm = TRUE)`) e o gasto total com estagiários em milhões de reais (`gasto_mi = sum(dest, na.rm = TRUE) / 1e6`). Façam um gráfico de barras colorido no ggplot2 mostrando a evolução de `gasto_mi` por ano.
 
 ```{r}
 
 ```
 
-3) Filtrem o ano de 2025 em `est25`. Calculem a média e a mediana de
-   `prop_estag`. Em média, qual é o peso dos estagiários nos TJs?
+3)  Filtrem o ano de 2025 em `est25`. Calculem a média e a mediana de `prop_estag`. Em média, qual é o peso dos estagiários nos TJs?
 
 ```{r}
 
 ```
 
-4) Em 2025, quais são os 3 TJs com maior porcentagem de estagiários
-   (`prop_estag`) e os 3 com menor porcentagem?
+4)  Em 2025, quais são os 3 TJs com maior porcentagem de estagiários (`prop_estag`) e os 3 com menor porcentagem?
 
 ```{r}
 
 ```
 
-5) Usando o `ggplot2`, façam um boxplot colorido de `prop_estag` por
-   `porte` do tribunal em 2025 (`aes(x = porte, y = prop_estag, fill = porte)`).
-   Tribunais de grande porte dependem mais de estagiários?
+5)  Usando o `ggplot2`, façam um boxplot de `prop_estag` por `porte` do tribunal em 2025 (`aes(x = porte, y = prop_estag, fill = porte)`). Tribunais de grande porte dependem mais de estagiários?
 
 ```{r}
 
 ```
 
-6) Usando a `base` completa no ano de 2025, comparem os 4 ramos da
-   Justiça (Eleitoral, Estadual, Federal e Trabalho): qual ramo tem a
-   maior mediana de gasto com capacitação por servidor (`dcap / serv`)?
+6)  Façam um gráfico de dispersão no ggplot2 com os dados de 2025 (`est25`) cruzando o número de servidores (`serv` no eixo x) e o número de estagiários (`tfauxe` no eixo y), colorindo por `porte`.
 
 ```{r}
 
 ```
 
-7) (Livre) Façam um gráfico de dispersão no ggplot2 com os dados de
-   2025 (`est25`) cruzando o número de servidores (`serv` no eixo x) e
-   o número de estagiários (`tfauxe` no eixo y), colorindo por `porte`.
-   
-```{r}
+7)  Usando a `base` completa, de 2015 a 2025 (período em que `dcap` existe), calculem, para cada ano e cada ramo da Justiça, a mediana do gasto com capacitação por servidor (`dcap / serv`). Façam um gráfico de LINHAS no ggplot2, com uma linha por ramo (`color = justica`).
+
+a)  Qual ramo investe mais em capacitação por servidor ao longo da série?\
+
+```{r a}
 
 ```
-   
-   
+
+b)  Entre 2021 e 2025, o gasto por servidor cresceu ou caiu em cada ramo? Qual ramo mudou mais? Levantem hipóteses para explicar o padrão.\
+
+```{r b}
+
+```

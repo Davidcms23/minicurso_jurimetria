@@ -4,8 +4,14 @@ format: html
 editor: visual
 ---
 
+# Sobre os dados
+
+O conjunto de dados reúne informações dos tribunais estaduais brasileiros sobre casos de violência doméstica e feminicídio entre 2016 e 2025. O exercício busca analisar a evolução desses registros, comparar os tribunais por números absolutos e taxas relativas à população feminina, e investigar diferenças segundo o porte dos tribunais e sua capacidade de atendimento à demanda.
+
+## Descrição
+
 | Variável    | Descrição                                                    |
-|------------------|------------------------------------------------------|
+|--------------------|----------------------------------------------------|
 | `ano`       | ano de referência (2016 a 2025)                              |
 | `sigla`     | tribunal estadual (TJAC, TJRN, TJSP, ...)                    |
 | `uf_sede`   | unidade da federação (AC, RN, SP, ...)                       |
