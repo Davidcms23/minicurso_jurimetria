@@ -7,60 +7,49 @@ editor: visual
 ```{r}
 library(dplyr)
 url <- "https://raw.githubusercontent.com/Davidcms23/minicurso_jurimetria/refs/heads/main/dados/violencia.csv"
-vd <- read.csv(url)
+vf <- read.csv(url)
 ```
 
-
-1) Agrupem a base `vd` por `ano` e calculem a soma total de casos novos
-   de feminicídio (`cncfem`) no Brasil de 2016 a 2025. O número cresceu?
+1)  Agrupem a base `vf` por `ano` e calculem a soma total de casos novos de feminicídio (`cncfem`) no Brasil de 2016 a 2025. O número cresceu?
 
 ```{r}
 
 ```
 
-2) Para o ano de 2025, calculem o resumo (summary), a média e a mediana
-   de `cncfem`. A média e a mediana são próximas ou distantes? Por quê?
+2)  Para o ano de 2025, calculem o resumo (summary), a média e a mediana de `cncfem`. A média e a mediana são próximas ou distantes? Por quê?
 
 ```{r}
 
 ```
 
-3) Usando `mutate()`, criem na base `vd` duas novas colunas:
-     - `taxa_fem = cncfem / h2m` (casos novos por 100 mil mulheres)
-     - `iad_fem  = tbaixcfem / cncfem` (índice de atendimento à demanda)
-   Depois, filtrem novamente o ano de 2025 no objeto `vd25`.
+3)  Usando `mutate()`, criem na base `vf` duas novas colunas:
+    - `taxa_fem = cncfem / h2m` (casos novos por 100 mil mulheres)
+    - `iad_fem` (índice de atendimento à demanda) Depois, filtrem novamente o ano de 2025 no objeto `vf25`.
 
 ```{r}
 
 ```
 
-4) Em 2025, quais são os 3 tribunais com mais casos novos em números
-   absolutos (`cncfem`)? E quais são os 3 primeiros na taxa por 100 mil
-   mulheres (`taxa_fem`)? O que mudou entre os dois rankings?
-   
-```{r}
-
-```
-
-5) Façam um boxplot de `taxa_fem` por `porte` do tribunal em 2025.
-   Os tribunais de pequeno e médio porte têm taxas menores que os de
-   grande porte?
+4)  Em 2025, quais são os 3 tribunais com mais casos novos em números absolutos (`cncfem`)? E quais são os 3 primeiros na taxa por 100 mil mulheres (`taxa_fem`)? O que mudou entre os dois rankings?
 
 ```{r}
 
 ```
 
-6) Em 2025, quantos tribunais tiveram `iad_fem < 1` (isto é, baixaram
-   menos processos de feminicídio do que receberam)?
+5)  Façam um boxplot de `taxa_fem` por `porte` do tribunal em 2025. Os tribunais de pequeno e médio porte têm taxas menores que os de grande porte?
 
 ```{r}
 
 ```
 
-7) (Livre) Filtrem o TJ do estado de vocês e observem a evolução de
-   `cncvd`, `taxa_vd`, `cncfem` e `taxa_fem` de 2016 a 2025.
+6)  Em 2025, quantos tribunais tiveram `iad_fem < 1` (isto é, baixaram menos processos de feminicídio do que receberam)?
 
 ```{r}
 
 ```
 
+7) Filtrem o TJ do Rio Grande do Norte e observem a evolução de `cncvf`, `cncfem`, `taxa_vf = cncvf/h2m` e `taxa_fem` de 2016 a 2025.
+
+```{r}
+
+```
