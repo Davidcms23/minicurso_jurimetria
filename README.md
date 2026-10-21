@@ -1,6 +1,8 @@
 # Minicurso Jurimetria
 Este repositório contém o material utilizado no minicurso "Introdução à Jurimetria com o software R", oferecido durante a Semana da Estatística da UFRN 2026.
 
+Baixe os exercícios [aqui](https://github.com/Davidcms23/minicurso_jurimetria/tree/main/R/exercicios).
+
 ## Material
 
 #### Ferramentas
