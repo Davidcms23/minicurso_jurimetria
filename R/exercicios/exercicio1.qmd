@@ -13,6 +13,11 @@ $$
 $P =$ número de processos pendentes ao final do período;\
 $B =$ número de processos baixados nos últimos 12 meses.
 
+$< 1$: o estoque de processos cresceu;\
+$> 1$: o tribunal resolveu mais do que recebeu.\
+perto de $1$: muito processo acumulado;\
+perto de $0$: pouco.
+
 #### Índice de Atendimento à Demanda (iad)
 
 $$
@@ -22,7 +27,18 @@ $$
 $B =$ número de processos baixados no período;\
 $C =$ número de casos novos recebidos no mesmo período.
 
-# EXERCÍCIO: Justiça do Trabalho
+| Variável  | Descrição                                                   |
+|-----------|-------------------------------------------------------------|
+| `ano`     | ano de referência (2009 a 2025)                             |
+| `justica` | ramo da Justiça (Estadual, Federal, Trabalho, ...)          |
+| `sigla`   | tribunal (TJAC, TRT21, ...)                                 |
+| `cn`      | casos novos no ano                                          |
+| `cp`      | casos pendentes (ainda sem solução)                         |
+| `tbaix`   | processos baixados (encerrados)                             |
+| `iad`     | Índice de Atendimento à Demanda = tbaix / cn                |
+| `tc`      | taxa de congestionamento (simplificada) = cp / (cp + tbaix) |
+
+# Exercício
 
 ```{r}
 library(dplyr)
